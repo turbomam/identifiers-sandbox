@@ -1,0 +1,16 @@
+@prefix example: <https://example.org/> .
+@prefix identifiers_sandbox: <https://w3id.org/turbomam/identifiers-sandbox/> .
+@prefix schema1: <http://schema.org/> .
+
+example:Thing001 a schema1:Thing ;
+    schema1:description "foo bar" ;
+    schema1:name "foo bar" .
+
+example:Thing002 a schema1:Thing ;
+    schema1:description "foo bar" ;
+    schema1:name "foo bar" .
+
+[] a identifiers_sandbox:NamedThingCollection ;
+    identifiers_sandbox:entries example:Thing001,
+        example:Thing002 .
+

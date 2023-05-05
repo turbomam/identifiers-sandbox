@@ -1,4 +1,9 @@
----
+from linkml.generators.pythongen import PythonGenerator
+from linkml.validators import JsonSchemaDataValidator
+from linkml_runtime.dumpers import yaml_dumper
+
+# create a schema from a string for self-sufficiency
+schema_string = """
 id: https://w3id.org/turbomam/identifiers-sandbox
 name: identifiers-sandbox
 title: identifiers-sandbox
@@ -11,10 +16,9 @@ see_also:
 prefixes:
   identifiers_sandbox: https://w3id.org/turbomam/identifiers-sandbox/
   linkml: https://w3id.org/linkml/
-  biolink: https://w3id.org/biolink/
   schema: http://schema.org/
-  PATO: http://purl.obolibrary.org/obo/PATO_
   example: https://example.org/
+  
 default_prefix: identifiers_sandbox
 default_range: string
 
@@ -58,5 +62,30 @@ slots:
     slot_uri: schema:description
     description: A human-readable description for a thing
 
+"""
 
-enums: { }
+# could also generate the module from a file
+# sv = SchemaView(schema_string)
+# schema_obj = sv.schema
+# gen = PythonGenerator(schema_obj)
+
+gen = PythonGenerator(schema_string)
+
+identifiers_sandbox_module = gen.compile_module()
+
+thing_as_dict = {
+    "id": "example:1",
+    "name": "example name"
+}
+
+thing_as_instance = identifiers_sandbox_module.NamedThing(**thing_as_dict)
+
+print(yaml_dumper.dumps(thing_as_instance))
+
+validator = JsonSchemaDataValidator(schema_string)
+
+try:
+    validator.validate_object(thing_as_instance)
+    print("Valid!")
+except Exception as e:
+    print(e)
