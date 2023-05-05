@@ -1,0 +1,15 @@
+{
+  "entries": [
+    {
+      "id": "example:Thing001",
+      "name": "foo bar",
+      "description": "foo bar"
+    },
+    {
+      "id": "example:Thing002",
+      "name": "foo bar",
+      "description": "foo bar"
+    }
+  ],
+  "@type": "NamedThingCollection"
+}

@@ -5,18 +5,8 @@ message NamedThing
   string name = 0
   string description = 0
  }
-// Represents a Thing
-message Thing
- {
-  uriorcurie id = 0
-  string name = 0
-  string description = 0
-  string primaryEmail = 0
-  integer ageInYears = 0
-  personStatus vitalStatus = 0
- }
 // A holder for Thing objects
-message ThingCollection
+message NamedThingCollection
  {
- repeated  thing entries = 0
+ repeated  namedThing entries = 0
  }

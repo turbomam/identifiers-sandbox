@@ -7,17 +7,7 @@ CREATE TABLE "NamedThing" (
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE "Thing" (
-	id TEXT NOT NULL, 
-	name TEXT, 
-	description TEXT, 
-	primary_email TEXT, 
-	age_in_years INTEGER, 
-	vital_status VARCHAR(7), 
-	PRIMARY KEY (id)
-);
-
-CREATE TABLE "ThingCollection" (
+CREATE TABLE "NamedThingCollection" (
 	entries TEXT, 
 	PRIMARY KEY (entries)
 );

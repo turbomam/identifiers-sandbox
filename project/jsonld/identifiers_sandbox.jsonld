@@ -259,35 +259,6 @@
       "@type": "TypeDefinition"
     }
   ],
-  "enums": [
-    {
-      "name": "PersonStatus",
-      "definition_uri": "https://w3id.org/turbomam/identifiers-sandbox/PersonStatus",
-      "notes": [
-        "redundant text properties are currently required for building a DataHarmonizer menu"
-      ],
-      "from_schema": "https://w3id.org/turbomam/identifiers-sandbox",
-      "permissible_values": [
-        {
-          "text": "ALIVE",
-          "description": "the person is living",
-          "meaning": "PATO:0001421"
-        },
-        {
-          "text": "DEAD",
-          "description": "the person is deceased",
-          "meaning": "PATO:0001422"
-        },
-        {
-          "text": "UNKNOWN",
-          "description": "the vital status is not known",
-          "todos": [
-            "map this to an ontology"
-          ]
-        }
-      ]
-    }
-  ],
   "slots": [
     {
       "name": "id",
@@ -341,94 +312,18 @@
       "@type": "SlotDefinition"
     },
     {
-      "name": "primary_email",
-      "definition_uri": "https://w3id.org/turbomam/identifiers-sandbox/primary_email",
-      "description": "The main email address of a person",
-      "from_schema": "https://w3id.org/turbomam/identifiers-sandbox",
-      "mappings": [
-        "http://schema.org/email"
-      ],
-      "slot_uri": "http://schema.org/email",
-      "owner": "Thing",
-      "domain_of": [
-        "Thing"
-      ],
-      "range": "string",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "birth_date",
-      "definition_uri": "https://w3id.org/turbomam/identifiers-sandbox/birth_date",
-      "description": "Date on which a person is born",
-      "from_schema": "https://w3id.org/turbomam/identifiers-sandbox",
-      "mappings": [
-        "http://schema.org/birthDate"
-      ],
-      "slot_uri": "http://schema.org/birthDate",
-      "range": "date",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "age_in_years",
-      "definition_uri": "https://w3id.org/turbomam/identifiers-sandbox/age_in_years",
-      "description": "Number of years since birth",
-      "from_schema": "https://w3id.org/turbomam/identifiers-sandbox",
-      "slot_uri": "https://w3id.org/turbomam/identifiers-sandbox/age_in_years",
-      "owner": "Thing",
-      "domain_of": [
-        "Thing"
-      ],
-      "range": "integer",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "vital_status",
-      "definition_uri": "https://w3id.org/turbomam/identifiers-sandbox/vital_status",
-      "description": "living or dead status",
-      "from_schema": "https://w3id.org/turbomam/identifiers-sandbox",
-      "slot_uri": "https://w3id.org/turbomam/identifiers-sandbox/vital_status",
-      "owner": "Thing",
-      "domain_of": [
-        "Thing"
-      ],
-      "range": "PersonStatus",
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "thingCollection__entries",
+      "name": "namedThingCollection__entries",
       "from_schema": "https://w3id.org/turbomam/identifiers-sandbox",
       "slot_uri": "https://w3id.org/turbomam/identifiers-sandbox/entries",
       "multivalued": true,
       "alias": "entries",
-      "owner": "ThingCollection",
+      "owner": "NamedThingCollection",
       "domain_of": [
-        "ThingCollection"
+        "NamedThingCollection"
       ],
-      "range": "Thing",
+      "range": "NamedThing",
       "inlined": true,
       "inlined_as_list": true,
-      "@type": "SlotDefinition"
-    },
-    {
-      "name": "Thing_primary_email",
-      "definition_uri": "https://w3id.org/turbomam/identifiers-sandbox/primary_email",
-      "description": "The main email address of a person",
-      "from_schema": "https://w3id.org/turbomam/identifiers-sandbox",
-      "mappings": [
-        "http://schema.org/email"
-      ],
-      "is_a": "primary_email",
-      "domain": "Thing",
-      "slot_uri": "http://schema.org/email",
-      "alias": "primary_email",
-      "owner": "Thing",
-      "domain_of": [
-        "Thing"
-      ],
-      "is_usage_slot": true,
-      "usage_slot_name": "primary_email",
-      "range": "string",
-      "pattern": "^\\S+@[\\S+\\.]+\\S+",
       "@type": "SlotDefinition"
     }
   ],
@@ -451,52 +346,34 @@
       "@type": "ClassDefinition"
     },
     {
-      "name": "Thing",
-      "definition_uri": "https://w3id.org/turbomam/identifiers-sandbox/Thing",
-      "description": "Represents a Thing",
-      "from_schema": "https://w3id.org/turbomam/identifiers-sandbox",
-      "is_a": "NamedThing",
-      "slots": [
-        "id",
-        "name",
-        "description",
-        "Thing_primary_email",
-        "age_in_years",
-        "vital_status"
-      ],
-      "slot_usage": {},
-      "class_uri": "https://w3id.org/turbomam/identifiers-sandbox/Thing",
-      "@type": "ClassDefinition"
-    },
-    {
-      "name": "ThingCollection",
-      "definition_uri": "https://w3id.org/turbomam/identifiers-sandbox/ThingCollection",
+      "name": "NamedThingCollection",
+      "definition_uri": "https://w3id.org/turbomam/identifiers-sandbox/NamedThingCollection",
       "description": "A holder for Thing objects",
       "from_schema": "https://w3id.org/turbomam/identifiers-sandbox",
       "slots": [
-        "thingCollection__entries"
+        "namedThingCollection__entries"
       ],
       "slot_usage": {},
       "attributes": [
         {
           "name": "entries",
           "multivalued": true,
-          "range": "Thing",
+          "range": "NamedThing",
           "inlined": true,
           "inlined_as_list": true,
           "@type": "SlotDefinition"
         }
       ],
-      "class_uri": "https://w3id.org/turbomam/identifiers-sandbox/ThingCollection",
+      "class_uri": "https://w3id.org/turbomam/identifiers-sandbox/NamedThingCollection",
       "tree_root": true,
       "@type": "ClassDefinition"
     }
   ],
   "metamodel_version": "1.7.0",
   "source_file": "identifiers_sandbox.yaml",
-  "source_file_date": "2023-05-05T09:19:40",
-  "source_file_size": 2607,
-  "generation_date": "2023-05-05T09:20:47",
+  "source_file_date": "2023-05-05T10:23:02",
+  "source_file_size": 1462,
+  "generation_date": "2023-05-05T10:23:23",
   "@type": "SchemaDefinition",
   "@context": [
     "project/jsonld/identifiers_sandbox.context.jsonld",

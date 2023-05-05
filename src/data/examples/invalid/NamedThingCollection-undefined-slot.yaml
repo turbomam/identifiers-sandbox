@@ -1,6 +1,4 @@
 entries:
   - id: example:Thing001
     name: foo bar
-  - id: example:Thing001
-    name: foo bar
     undefined: undefined
