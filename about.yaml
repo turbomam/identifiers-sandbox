@@ -1,0 +1,7 @@
+---
+name: identifiers_sandbox
+author: Mark Andrew Miller <MAM@lbl.gov>
+description: A LinkML schema and project for exploring the functionality of LinkML slots with `identifier: true`
+source_schema_path: src/identifiers_sandbox/schema/identifiers_sandbox.yaml
+google_sheet_id: 1wVoaiFg47aT9YWNeRfTZ8tYHN8s8PAuDx5i2HUcDpvQ
+google_sheet_tabs: personinfo enums

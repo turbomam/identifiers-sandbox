@@ -1,0 +1,27 @@
+{
+  "template": "https://github.com/turbomam/examples-first-cookiecutter",
+  "commit": "f1d9d93937c7554d56b60c79f051ca350d6896fb",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "identifiers-sandbox",
+      "__project_slug": "identifiers_sandbox",
+      "github_org": "turbomam",
+      "__source_path": "src/identifiers_sandbox/schema/identifiers_sandbox.yaml",
+      "project_description": "A LinkML schema and project for exploring the functionality of LinkML slots with `identifier: true`",
+      "full_name": "Mark Andrew Miller",
+      "email": "MAM@lbl.gov",
+      "__author": "Mark Andrew Miller <MAM@lbl.gov>",
+      "license": "BSD-3",
+      "main_schema_class": "Thing",
+      "create_python_classes": "Yes",
+      "use_schemasheets": "No",
+      "google_sheet_id": "1wVoaiFg47aT9YWNeRfTZ8tYHN8s8PAuDx5i2HUcDpvQ",
+      "google_sheet_tabs": "personinfo enums",
+      "__google_sheet_module": "personinfo_enums",
+      "github_token_for_pypi_deployment": "PYPI_PASSWORD",
+      "_template": "https://github.com/turbomam/examples-first-cookiecutter"
+    }
+  },
+  "directory": null
+}
